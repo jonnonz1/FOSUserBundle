@@ -1,6 +1,8 @@
 FOSUserBundle
 =============
 
+Slight change by removing restrictions around email/username and adding constraint around account.
+
 The FOSUserBundle adds support for a database-backed user system in Symfony2.
 It provides a flexible framework for user management that aims to handle
 common tasks such as user registration and password retrieval.
