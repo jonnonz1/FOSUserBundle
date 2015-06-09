@@ -71,7 +71,7 @@ abstract class User implements UserInterface, GroupableInterface
     protected $plainPassword;
 
     /**
-     * @ORM\Column(name="last_login", type="datetime")
+     * @ORM\Column(name="last_login", type="datetime", nullable=true)
      */
     protected $lastLogin;
 
