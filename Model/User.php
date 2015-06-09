@@ -101,7 +101,7 @@ abstract class User implements UserInterface, GroupableInterface
     protected $expired;
 
     /**
-     * @ORM\Column(name="expires_at", type="datetime")
+     * @ORM\Column(name="expires_at", type="datetime", nullable=true)
      */
     protected $expiresAt;
 
@@ -116,7 +116,7 @@ abstract class User implements UserInterface, GroupableInterface
     protected $credentialsExpired;
 
     /**
-     * @ORM\Column(name="credentials_expire_at", type="datetime")
+     * @ORM\Column(name="credentials_expire_at", type="datetime", nullable=true)
      */
     protected $credentialsExpireAt;
 
