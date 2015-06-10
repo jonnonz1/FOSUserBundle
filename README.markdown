@@ -1,7 +1,14 @@
 FOSUserBundle
 =============
 
-Slight change by removing restrictions around email/username and adding constraint around account.
+
+Heavily modified changes include
+
+- Removed storage apart from orm (doctrine 2)
+- Removed constraints from User (username and email) - Implemented differently by extension
+- Added (very basic and hacked) support in user provider for subdomain checks against a user.
+- For this to work you must implement a getUserByEmailAndSubdomain in the UserRepository if using
+
 
 The FOSUserBundle adds support for a database-backed user system in Symfony2.
 It provides a flexible framework for user management that aims to handle

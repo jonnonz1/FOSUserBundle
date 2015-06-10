@@ -92,6 +92,11 @@ abstract class UserManager implements UserManagerInterface, UserProviderInterfac
         return $this->findUserBy(array('usernameCanonical' => $this->canonicalizeUsername($username)));
     }
 
+    public function findUserByEmailAndSubdomain($email, $subdomain)
+    {
+        return $this->getUserByEmailAndSubdomain($this->canonicalizeEmail($email), $subdomain);
+    }
+
     /**
      * Finds a user either by email, or username
      *

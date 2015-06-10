@@ -61,6 +61,14 @@ interface UserManagerInterface
     public function findUserByUsername($username);
 
     /**
+     * @param string $email
+     * @param string $subdomain
+     *
+     * @return UserInterface or null if user does not exist
+     */
+    public function findUserByEmailAndSubdomain($email, $subdomain);
+
+    /**
      * Finds a user by its email.
      *
      * @param string $email

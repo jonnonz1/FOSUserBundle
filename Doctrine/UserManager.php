@@ -77,6 +77,18 @@ class UserManager extends BaseUserManager
     }
 
     /**
+     * Used for login with email and subdomain.
+     *
+     * @param string $email
+     * @param string $subdomain
+     * @return UserInterface|null
+     */
+    public function getUserByEmailAndSubdomain($email, $subdomain)
+    {
+        return $this->repository->getUserByEmailAndSubdomain($this->canonicalizeEmail($email), $subdomain);
+    }
+
+    /**
      * {@inheritDoc}
      */
     public function reloadUser(UserInterface $user)
