@@ -12,9 +12,10 @@ class SubdomainEmailProvider extends UserProvider
         if (isset($_POST['_subdomain'])) {
             $subdomain =  $_POST['_subdomain'];
         } elseif(isset($_SERVER['HTTP_HOST'])) {
-            $subdomain =  array_shift((explode('.',$_SERVER['HTTP_HOST'])));
+            $httpHost = explode('.', $_SERVER['HTTP_HOST']);
+            $subdomain =  array_shift($httpHost);
         } else {
-            throw new \Exception('Unable to extract subdomain from request for login.');
+            throw new \Exception('Unable to extract domain from request for login.');
         }
         return $this->userManager->findUserByEmailAndSubdomain($email, $subdomain);
     }
